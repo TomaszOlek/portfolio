@@ -36,7 +36,7 @@ function FindUs() {
     <Container id="contact">
       <div className="gs_reveal gs_reveal_fromLeft">
         <Header2>Contact</Header2>
-        <img src={SpoonRight} alt="SpoonRight" />
+        <img src={SpoonRight} alt="SpoonRight" loading="lazy"/>
         <Header1 margin="30px 0 70px 0">Find Us</Header1>
         <Paragraf margin="0 0 15px 0" >Lane Ends Bungalow, Whatcroft Hall Lane, Rudheath, CW9 7SG</Paragraf>
         <Header2 color="#DCCA87">Opening Hours</Header2>
@@ -48,7 +48,7 @@ function FindUs() {
         <div style={{position:"absolute", width:"0"}}>
           <Box bottom="24px" left="209px"/>
         </div>
-        <img src={FindUsImage} alt="FindUsImage" style={{position: "relative", zIndex:"1"}}/>
+        <img src={FindUsImage} alt="FindUsImage" loading="lazy" style={{position: "relative", zIndex:"1"}}/>
         <div style={{position:"absolute", width:"0"}}>
           <Box bottom="415px" right="24px"/>
         </div>

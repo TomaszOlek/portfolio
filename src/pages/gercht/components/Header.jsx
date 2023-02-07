@@ -80,7 +80,7 @@ function Header() {
 
   return (
     <Container scrollDirection={scrollDirection}>
-      <img src={Logo} alt="gericht logo"/>
+      <img src={Logo} alt="gericht logo" loading="lazy"/>
       <NavBar>
         <Link href="#home">Home</Link>
         <Link href="#about">About</Link>
@@ -90,7 +90,7 @@ function Header() {
       </NavBar>
       <ActionMenu>
         <Link>Log In / Registration</Link>
-        <img src={Spacer} alt="spacer"/>
+        <img src={Spacer} alt="spacer" loading="lazy"/>
         <Link>Book Table</Link>
       </ActionMenu>
     </Container>

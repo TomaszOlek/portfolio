@@ -48,22 +48,22 @@ function OurLaurels() {
   return (
     <Container>
       <div style={{position:"absolute"}}>
-      <img src={LaurelsLogo} alt="LaurelsLogo" style={{position: "relative", bottom:"330px", right:"630px"}}/>
+      <img src={LaurelsLogo} alt="LaurelsLogo" loading="lazy" style={{position: "relative", bottom:"330px", right:"630px"}}/>
       </div>
       <div style={{width:"632px"}} className="gs_reveal gs_reveal_fromLeft">
         <Header2>Awards & recognition</Header2>
-        <img src={SpoonRight} alt="SpoonRight"/>
+        <img src={SpoonRight} alt="SpoonRight" loading="lazy"/>
         <Header1 >Our Laurels</Header1>
         <LaurelsRow className="gs_reveal">
           <LaurelsItem>
-            <img src={Laurels2} alt="Laurels2" style={{width:"79px", height:"79px", alignSelf:"center"}}/>
+            <img src={Laurels2} alt="Laurels2" loading="lazy" style={{width:"79px", height:"79px", alignSelf:"center"}}/>
             <LaurelsText>
               <Header2 color="#DCCA87">Bib Gourmond</Header2>
               <Paragraf>Lorem ipsum dolor sit amet, consectetur.</Paragraf>
             </LaurelsText>
           </LaurelsItem>
           <LaurelsItem>          
-            <img src={Laurels1} alt="Laurels1" style={{width:"79px", height:"79px", alignSelf:"center"}}/>
+            <img src={Laurels1} alt="Laurels1" loading="lazy" style={{width:"79px", height:"79px", alignSelf:"center"}}/>
             <LaurelsText>
               <Header2 color="#DCCA87">Rising Star</Header2>
               <Paragraf>Lorem ipsum dolor sit amet, consectetur.</Paragraf>
@@ -72,14 +72,14 @@ function OurLaurels() {
         </LaurelsRow>
         <LaurelsRow className="gs_reveal">
           <LaurelsItem>          
-            <img src={Laurels5} alt="Laurels5" style={{width:"79px", height:"69px", alignSelf:"center"}}/>
+            <img src={Laurels5} alt="Laurels5" loading="lazy" style={{width:"79px", height:"69px", alignSelf:"center"}}/>
             <LaurelsText>
               <Header2 color="#DCCA87">AA Hospitality </Header2>
               <Paragraf>Lorem ipsum dolor sit amet, consectetur.</Paragraf>
             </LaurelsText>
           </LaurelsItem>
           <LaurelsItem>          
-            <img src={Laurels3} alt="Laurels3" style={{width:"79px", height:"79px", alignSelf:"center"}}/>
+            <img src={Laurels3} alt="Laurels3" loading="lazy" style={{width:"79px", height:"79px", alignSelf:"center"}}/>
             <LaurelsText>
               <Header2 color="#DCCA87">Outstanding Chef</Header2>
               <Paragraf>Lorem ipsum dolor sit amet, consectetur.</Paragraf>
@@ -87,7 +87,7 @@ function OurLaurels() {
           </LaurelsItem>
         </LaurelsRow>
       </div>
-      <img src={MeatImage} alt="MeatImage" style={{width:"483px"}} className="gs_reveal gs_reveal_fromRight"/>
+      <img src={MeatImage} alt="MeatImage" loading="lazy" style={{width:"483px"}} className="gs_reveal gs_reveal_fromRight"/>
     </Container>
   );
 }

@@ -56,26 +56,26 @@ function PhotoGallery() {
     <Container id="blog">
       <GalleryText className="gs_reveal gs_reveal_fromLeft">
         <Header2>Instagram</Header2>
-        <img src={SpoonRight} alt="SpoonRight" style={{width:"40px"}} />
+        <img src={SpoonRight} alt="SpoonRight" loading="lazy" style={{width:"40px"}} />
         <Header1>Photo Gallery</Header1>
         <Paragraf margin="15px 0 10px 0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mu.</Paragraf>
         <Button style={{ margin:"20px 0 0 0"}}>View More</Button>
       </GalleryText>
       <Gallery>
         <GalleryItem>
-          <img src={Ramen} alt="Ramen" style={{ width:"192px", alignSelf:"center"}}/>
+          <img src={Ramen} alt="Ramen" loading="lazy" style={{ width:"192px", alignSelf:"center"}}/>
         </GalleryItem>
         <GalleryItem>
-          <img src={Drinks} alt="Drinks" style={{ width:"192px", alignSelf:"center"}}/>
+          <img src={Drinks} alt="Drinks" loading="lazy" style={{ width:"192px", alignSelf:"center"}}/>
         </GalleryItem>
         <GalleryItem>
-          <img src={Egg} alt="Egg" style={{ width:"192px", alignSelf:"center"}}/>
+          <img src={Egg} alt="Egg" loading="lazy" style={{ width:"192px", alignSelf:"center"}}/>
         </GalleryItem>
         <GalleryItem>
-          <img src={Soup} alt="Soup" style={{ width:"192px", alignSelf:"center"}}/>
+          <img src={Soup} alt="Soup" loading="lazy" style={{ width:"192px", alignSelf:"center"}}/>
         </GalleryItem>
         <GalleryItem>
-          <img src={BlackberryDrink} alt="BlackberryDrink" style={{ width:"192px", alignSelf:"center"}}/>
+          <img src={BlackberryDrink} alt="BlackberryDrink" loading="lazy" style={{ width:"192px", alignSelf:"center"}}/>
         </GalleryItem>
       </Gallery>
     </Container>

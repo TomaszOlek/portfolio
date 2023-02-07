@@ -46,7 +46,7 @@ function Video() {
   return (
     <Container>
       <Ellipse>
-        <StartButton src={PlayButton} alt="PlayButton" />
+        <StartButton src={PlayButton} alt="PlayButton" loading="lazy"/>
       </Ellipse>
     </Container>
   );

@@ -78,7 +78,7 @@ function Hero() {
       <Content className="gs_reveal">
         <div style={{width:"453px", height:"481px"}}>
           <Header2 style={{textTransform: "capitalize"}}>Chase the new Flavour</Header2>
-          <img src={Spoon} alt="spoon_image"/>
+          <img src={Spoon} alt="spoon_image" loading="lazy"/>
           <CustomText 
             style={{textTransform: "capitalize"}}
             weight="700" 
@@ -94,7 +94,7 @@ function Hero() {
           <div style={{position:"absolute", width:"0"}}>
             <Box bottom="24px" left="207px"/>
           </div>
-          <img src={FishImage} alt="fish_image" style={{position: "relative", zIndex:"1"}}/>
+          <img src={FishImage} alt="fish_image" loading="lazy" style={{position: "relative", zIndex:"1"}}/>
           <div style={{position:"absolute", width:"0"}}>
             <Box bottom="407px" right="24px"/>
           </div>
@@ -104,7 +104,7 @@ function Hero() {
         <CustomText style={{fontFeatureSettings: "'tnum' on, 'lnum' on"}} weight="600">
           01
         </CustomText> 
-        <img src={Line} alt="Line"/>
+        <img src={Line} alt="Line" loading="lazy"/>
         <CustomText style={{fontFeatureSettings: "'tnum' on, 'lnum' on"}} weight="600">
           02
         </CustomText> 
@@ -117,7 +117,7 @@ function Hero() {
       </PagesNavigation>
       <div style={{position:"absolute", width:"0"}} className="gs_reveal">
         <ScrollDown>
-          <img src={Line2} alt="Line"/>
+          <img src={Line2} alt="Line" loading="lazy"/>
           <CustomText style={{textTransform: "uppercase"}} weight="700" color="#DCCA87">
             Scroll
           </CustomText> 

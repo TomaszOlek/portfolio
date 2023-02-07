@@ -44,17 +44,17 @@ function ChefWord() {
         <div style={{position:"absolute", width:"0"}}>
           <Box bottom="24px" left="175px"/>
         </div>
-        <img src={ChefImage} alt="fish_image" style={{position: "relative", zIndex:"1"}}/>
+        <img src={ChefImage} alt="fish_image" loading="lazy" style={{position: "relative", zIndex:"1"}}/>
         <div style={{position:"absolute", width:"0"}}>
           <Box bottom="415px" right="24px"/>
         </div>
       </ImageContainer>
       <div style={{width:"570px"}} className="gs_reveal gs_reveal_fromRight">
         <Header2>Chef’s Word</Header2>
-        <img src={SpoonRight} alt="SpoonImage"/>
+        <img src={SpoonRight} loading="lazy" alt="SpoonImage"/>
         <Header1>What We Believe In</Header1>
         <div style={{margin:"80px 0 80px 0"}} className="gs_reveal">
-          <img src={DoubleQuoteMark} alt="DoubleQuoteMark" style={{width: "47px", float: "left", paddingRight:"10px"}}/>
+          <img src={DoubleQuoteMark}  alt="DoubleQuoteMark" loading="lazy" style={{width: "47px", float: "left", paddingRight:"10px"}}/>
           <Paragraf style={{paddingTop:"15px", fontStyle:"italic"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit auctor sit . auctor sit iaculis in arcu. Vulputate nulla lobortis mauris eget sit. Nulla scelerisque scelerisque congue ac consequat, aliquam molestie lectus eu. Congue iaculis integer curabitur semper sit nunc.</Paragraf>
         </div>
         <Header3 color="#DCCA87" margin="0">Kevin Luo</Header3>

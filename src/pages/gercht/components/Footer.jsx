@@ -63,7 +63,7 @@ function Footer() {
     <Container>
       <SubscribeContainer>
         <Header2>Newsletter</Header2>
-        <img src={SpoonRight} alt="SpoonRight"/>
+        <img src={SpoonRight} alt="SpoonRight" loading="lazy"/>
         <Header1 margin="30px 0 10px 0">Subscribe To Our Newsletter</Header1>
         <Paragraf color="#FFF" margin="20px 0 40px 0">And never miss latest Updates!</Paragraf>
         <div style={{ width:"796px", height:"60px", display:"flex", justifyContent:"space-between", alignItems: "center" }}>
@@ -82,7 +82,7 @@ function Footer() {
           <div style={{width:"438px", display:"flex",flexDirection:"column"}}>
             <Header1 align="center" margin="20px 0 60px 0" style={{textTransform: "uppercase"}}>Gerícht</Header1>
             <Paragraf align="center" color="#FFF" margin="20px 0">"The best way to find yourself is to lose yourself in the service of others.”</Paragraf>
-            <img src={SpoonRight} alt="SpoonRight" style={{alignSelf:"center", marginBottom:"16px"}}/>
+            <img src={SpoonRight} alt="SpoonRight" loading="lazy" style={{alignSelf:"center", marginBottom:"16px"}}/>
             <IconContext.Provider value={{ color: "white", className: "global-class-name" }}>
               <div style={{display: "flex", justifyContent:"center", gap:"16px"}}>
                 <GrFacebookOption size="24px"/>

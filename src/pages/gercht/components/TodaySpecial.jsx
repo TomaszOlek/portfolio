@@ -104,7 +104,7 @@ function TodaySpecial() {
     <Container id="specials">
       <TextHeader className="gs_reveal">
         <Header2 style={{textTransform: "capitalize"}}>Menu that fits you palatte</Header2>
-        <img src={SpoonRight} alt="SpoonRight"/>
+        <img src={SpoonRight} alt="SpoonRight" loading="lazy"/>
         <Header1>Today’s Special</Header1>
       </TextHeader>
 
