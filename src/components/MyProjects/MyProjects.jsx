@@ -172,20 +172,19 @@ const Anchor = styled.a`
     color: #fff;
   }
 `
-
 const Options = [
   {
     Name: "Gericht Page",
     Image: Gericht,
     LiveView: "/gercht",
-    Code: "",
+    Code: "https://github.com/TomaszOlek/portfolio/tree/master/src/pages/gercht",
     Figma: "https://www.figma.com/file/yvClSI9AZBRX8UaaGEByF3/Modern-UI%2FUX%3A-Gericht?t=xiqpT2OZ0zRaXuIL-0"
   },
   {
     Name: "Lush Page",
     Image: Lush,
     LiveView: "/lush",
-    Code: "",
+    Code: "https://github.com/TomaszOlek/portfolio/tree/master/src/pages/lush",
     Figma: "https://www.figma.com/community/file/1198094410138226771"
   },
   {
