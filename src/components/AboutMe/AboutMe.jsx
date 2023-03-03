@@ -38,10 +38,10 @@ function AboutMe() {
       <Clip>
         <h2>About Me</h2>
         <p style={{textAlign:"center"}}>
-          I am a front-end developer with a passion for creating visually appealing websites.
-          Although I may not have a vast amount of experience, I am a quick learner and I am always eager to take on new challenges.
-          I am constantly working to improve my skills, and I am always seeking out new opportunities to expand my knowledge and expertise.
-          I am committed to delivering quality work and exceeding client expectations.
+          I'm a front-end developer with a passion for creating visually appealing websites.
+          Although I may not have a vast amount of experience, I'm a quick learner and I'm always eager to take on new challenges.
+          I'm constantly working to improve my skills, and I'm always seeking out new opportunities to expand my knowledge and expertise.
+          I'm committed to delivering quality work and exceeding client expectations.
         </p>
       </Clip>
     </Container>
