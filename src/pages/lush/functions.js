@@ -23,6 +23,6 @@ export const Button = styled.button`
 
   border-radius: 3px;
   color: #fff;
-  background: ${props => props.fill ?  "#285A43" : "transparent"};
-  border: 1px solid ${props => props.fill ?  "#285A43" : "#fff"};
+  background: ${props => props.fill === "true" ?  "#285A43" : "transparent"};
+  border: 1px solid ${props => props.fill === "true" ?  "#285A43" : "#fff"};
 `;

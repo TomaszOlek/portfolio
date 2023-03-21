@@ -1,29 +1,222 @@
-import React, { useState, useRef } from "react"
-import { Link } from "react-router-dom";
-import styled, { keyframes } from 'styled-components';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import ProjectDetails from "./ProjectDetails";
 
-import Lush from "../../assets/Lush.png"
-import Gericht from "../../assets/Gericht.png"
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
-const fadeOut = keyframes`
-  0% {
-    opacity: 1;
+import Gericht from "../../assets/Gericht_Project.png";
+import Netflix from "../../assets/Netflix_Project.png";
+import TalkItThrough from "../../assets/TalkItThrough_Project.png";
+import Reddit from "../../assets/Reddit_Project.png";
+
+function MyProjects() {
+  gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+  gsap.defaults({ ease: "none" });
+
+  const [proejctData, setProjectData] = useState({});
+  const [isProjectDataVisible, setIsProjectDataVisible] = useState(false);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      const pulses = gsap
+        .timeline({
+          defaults: {
+            duration: 0.2,
+            autoAlpha: 1,
+            scale: 1,
+            transformOrigin: "center",
+            ease: "elastic(1.2, 1)",
+          },
+        })
+        .to(".project1", {}, 0.01)
+        .to(".project2", {}, 0.2)
+        .to(".project3", {}, 0.43)
+        .to(".project4", {}, 0.7);
+
+      const main = gsap
+        .timeline({
+          defaults: { duration: 1 },
+          scrollTrigger: {
+            trigger: "#svg",
+            scrub: true,
+            start: "top center",
+            end: "110%",
+            // markers: true
+          },
+        })
+        .to(".ball01", { duration: 0.02, scale: 1 })
+        .to(
+          ".ball01",
+          {
+            motionPath: {
+              path: ".theLine",
+              align: ".theLine",
+              alignOrigin: [0.5, 0.5],
+            },
+          },
+          0,
+        )
+        .add(pulses, 0)
+        .to(".ball01", { duration: 0.02, scale: 0 });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
+  const handelProjectClick = project => {
+    setProjectData(project);
+    setIsProjectDataVisible(true);
+  };
+
+  return (
+    <Container id="projects">
+      <Clip>
+        <h2 style={{ color: "#fff" }}>My Projects</h2>
+        <Projects>
+          <svg
+            id="svg"
+            className="projectpath"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 600 1200"
+          >
+            <style>{svgStyles}</style>
+
+            <path className="brakeline line" d="M 397 -102 l 22 32"></path>
+
+            {/* <path className="line" d="M 10 170  600 170"></path>
+            <path className="line" d="M 10 580  600 580"></path>
+            <path className="line" d="M 10 1050  600 1050"></path>
+            <path className="line" d="M 10 1500  600 1500"></path> */}
+
+            <path
+              className="theLine"
+              d="
+              M 408 -86 Q -41 169 349 365 T 326 780 Q -202 1039 290 1241 T 212 1833
+              "
+              fill="none"
+              stroke="white"
+              strokeWidth="8px"
+            />
+
+            <path className="brakeline line" d="M 201 1820 L 223 1849"></path>
+
+            <circle className="ball ball01" r="20" cx="50" cy="100"></circle>
+          </svg>
+
+          {options.map((item, index) => (
+            <Project
+              top={item.position.top}
+              left={item.position.left}
+              className={`project${index + 1}`}
+              onClick={() => handelProjectClick(item)}
+              key={index}
+            >
+              <img
+                src={item.image}
+                alt=""
+                style={{
+                  maxWidth: "100%",
+                  objectFit: "contain",
+                }}
+              />
+            </Project>
+          ))}
+        </Projects>
+      </Clip>
+      <div
+        style={{ position: "fixed", top: 0, left: 0, zIndex: 10 }}
+        onClick={() => setIsProjectDataVisible(false)}
+      >
+        {isProjectDataVisible && (
+          <ProjectInfo>
+            <ProjectDetails proejctData={proejctData} />
+          </ProjectInfo>
+        )}
+      </div>
+    </Container>
+  );
+}
+
+export default MyProjects;
+
+const options = [
+  {
+    name: "Gericht and Lush Page",
+    image: Gericht,
+    liveView: "http://127.0.0.1:5173/gercht",
+    code: "https://github.com/TomaszOlek/portfolio/tree/master/src/pages/gercht",
+    figma: [
+      "https://www.figma.com/file/67ZtAj8USVbe88mkUobEdV/Modern-UI%2FUX%3A-Gericht-(Copy)?node-id=0-1&t=MQq4Y5GYhgsd31oD-0",
+      "https://www.figma.com/file/t0IFgkLMoP8WclRrKhhshY/Lush-Garden---Florist-Landing-Page-Design?node-id=1-1210&t=lLzMeQfeu2vDSqhj-0",
+    ],
+    position: {
+      top: "210px",
+      left: "320px",
+    },
+  },
+  {
+    name: "Netflix - Main dashboard",
+    image: Netflix,
+    liveView: "https://magical-chebakia-84e3fd.netlify.app/",
+    code: "https://github.com/TomaszOlek/netflix-main-dashbord",
+    figma: ["https://www.figma.com/file/BsK0T6RnoKInhQ6xiksKQm/Design"],
+    position: {
+      top: "620px",
+      left: "100px",
+    },
+  },
+  {
+    name: "Talk It Through - Chat",
+    image: TalkItThrough,
+    liveView: "https://fullstack-talkitthrough.vercel.app/",
+    code: "https://github.com/TomaszOlek/fullstack-talkitthrough",
+    figma: [""],
+    position: {
+      top: "1070px",
+      left: "280px",
+    },
+  },
+  {
+    name: "Reddit Main Page",
+    image: Reddit,
+    liveView: "https://clever-kataifi-93f81c.netlify.app/",
+    code: "https://github.com/TomaszOlek/reddit-main-page",
+    figma: [
+      "https://www.figma.com/file/CWjXH3THR1TrERzfUFhl7z/Design?node-id=0-1&t=CXjQybFt75q2n7Yl-0",
+    ],
+    position: {
+      top: "1550px",
+      left: "110px",
+    },
+  },
+];
+
+const svgStyles = `
+  .line {
+    fill: none;
+    stroke: white;
+    stroke-width: 2px;
   }
-  100% {
-    opacity: 0;
+  .brakeline {
+    stroke-width: 10px;
+  }
+  .projectpath {
+    max-width: 600px;
+    overflow: visible;
+    margin-top: 150px;
+  }
+  .ball01 {
+    fill: white;
+    border-radius: 50%;
+    transform: scale(0);
   }
 `;
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
+
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 2200px;
 
   display: flex;
   justify-content: center;
@@ -31,11 +224,12 @@ const Container = styled.div`
   scroll-snap-align: start;
 `;
 const Clip = styled.div`
-  width: 70%;
-  height: 60%;
+  width: 50%;
+  height: 100%;
+  min-width: 700px;
+  padding-top: 30px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 
@@ -46,216 +240,43 @@ const Clip = styled.div`
   background: rgba(118, 118, 118, 0.14);
   border: 1px solid rgba(118, 118, 118, 0.32);
 `;
-const Project = styled.div`
-  width: 80%;
-  height: 70%;
-  background-color: #5353535a;
-
+const Projects = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-
-  border-radius: 40px;
-`
-const Test = styled.ul`
-  height:90%;
-  max-width: 300px;
-  padding: 0;
-  align-self: center;
-  flex: 1;
-  margin: 30px 20px 0px 20px;
-
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-
-  display:flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  gap: 5px;
-
-  &:after {
-    content: '';
-    position: relative;
-    top: -2px;
-    left: -15px;
-    right: -15px;
-    bottom: -15px;
-    background: yellow;
-  }
-`
-const Item = styled.li`
-  width: 95%;
-  height: 10%;
-
-  align-self: center;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-
-  &:first-child > a{
-    margin-top: 5px;
-    border-top-right-radius: 20px;
-  }
-  &:last-child > a{
-    border-bottom-right-radius: 20px;
-  }
-`
-const Button = styled.button`
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  background-color: ${props => props.disabled ? "#949494" : "#fff"};
-  border: transparent;
-  border-radius: 4px;
-  outline: none;
-
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,${props => props.disabled ? "#5c5c5c" : "#D6D6E7"} 0 -3px 0 inset;
-  color: #36395A;
-  
-  box-sizing: border-box;
-  display: inline-flex;
-  height: 48px;
-  justify-content: center;
-  padding: 10px 16px 0 16px;
+  align-items: flex-start;
 
   position: relative;
-  transition: box-shadow .15s,transform .15s;
-  font-size: 18px;
-
-  transform-style: flat;
-  transition: all 250ms ease-out;
-  
-  ${props => !props.disabled && `
-    &:focus {
-      box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    }
-
-    &:hover {
-      box-shadow: rgba(189, 189, 189, 0.4) 0 4px 8px, rgba(255, 255, 255, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-      transform: translateY(-2px);
-    }
-
-    &:active {
-      box-shadow: #D6D6E7 0 3px 7px inset;
-      transform: translateY(2px);
-    }
-  `};
-`
-const Contnet = styled.div`
-  width: 50%;
+  width: 600px;
   height: 100%;
+`;
+const Project = styled.div`
+  position: absolute;
+  top: ${props => (props.top ? props.top : 0)};
+  left: ${props => (props.left ? props.left : 0)};
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: 50px;
+  width: 300px;
+  height: 186px;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #ffffff;
 
-  flex: 1;
-  border-right: 1px solid #8b8b8b;
-  animation: ${({ isVisible }) => (isVisible ? fadeIn : fadeOut)} 0.5s ease-in-out forwards;
-`
-const Redirect = styled(Link)`
-  text-decoration: none;
-  color: #fff;
+  transform: scale(0);
+  filter: brightness(76%);
+  transform-origin: center;
 
-  &:focus{
-    color: #fff;
+  &:hover {
+    filter: brightness(105%);
   }
-`
-const Anchor = styled.a`
-  text-decoration: none;
-  color: #fff;
+`;
+const ProjectInfo = styled.div`
+  content: "";
+  width: 100vw;
+  height: 100vh;
 
-  &:focus{
-    color: #fff;
-  }
-`
-const Options = [
-  {
-    Name: "Gericht Page",
-    Image: Gericht,
-    LiveView: "/gercht",
-    Code: "https://github.com/TomaszOlek/portfolio/tree/master/src/pages/gercht",
-    Figma: "https://www.figma.com/file/yvClSI9AZBRX8UaaGEByF3/Modern-UI%2FUX%3A-Gericht?t=xiqpT2OZ0zRaXuIL-0"
-  },
-  {
-    Name: "Lush Page",
-    Image: Lush,
-    LiveView: "/lush",
-    Code: "https://github.com/TomaszOlek/portfolio/tree/master/src/pages/lush",
-    Figma: "https://www.figma.com/community/file/1198094410138226771"
-  },
-  {
-    Name: "Coming soon",
-    Image: "",
-    LiveView: "",
-    Code: "",
-    Figma: ""
-  },
-  {
-    Name: "Coming soon",
-    Image: "",
-    LiveView: "",
-    Code: "",
-    Figma: ""
-  },
-  {
-    Name: "Coming soon",
-    Image: "",
-    LiveView: "",
-    Code: "",
-    Figma: ""
-  },
-]
+  position: absolute;
+  top: 0;
+  left: 0;
 
-function MyProjects() {
-
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
-  const textRef = useRef();
-
-  const handleClick = index => {
-    textRef.current.addEventListener("animationend", () => {
-      setSelectedIndex(index);
-      setIsVisible(true);
-    });
-    setIsVisible(false);
-  };
-
-  return (
-    <Container id="projects">
-      <Clip>  
-        <h2 style={{color:"#fff"}}>My Projects</h2>
-
-        <Project>
-          <Contnet ref={textRef} isVisible={isVisible}>
-            {Options[selectedIndex] && (
-              <div style={{ maxWidth:"400px"}}>
-              <img src={Options[selectedIndex].Image} style={{maxWidth:"80%"}} />
-              <div style={{display: "flex", flexDirection: "row", justifyContent: "flex-start", gap: "20px", marginTop: "15px"}}>
-                <Redirect to={Options[selectedIndex].LiveView}>Live View</Redirect>
-                <Anchor href={Options[selectedIndex].Code} target="_blank">Code</Anchor>
-                <Anchor href={Options[selectedIndex].Figma} target="_blank">Figma design</Anchor>
-              </div>
-            </div>
-            )}
-          </Contnet>
-
-          <div style={{ width:"40%", height:"100%", alignItems:"center", maxWidth: "370px", display: "flex", justifyContent: "center" }}>
-            <Test>
-              {Options.map((option, index) => (
-                <Item key={index} style={{listStyle:"none"}}><Button onClick={(() => handleClick(index))} disabled={option.Name === "Coming soon" ? true : false}> {option.Name} </Button></Item>
-              ))}
-            </Test>
-          </div>
-        </Project>
-
-      </Clip>
-    </Container>
-  );
-}
-  
-export default MyProjects;
-  
+  background-color: #00000074;
+`;

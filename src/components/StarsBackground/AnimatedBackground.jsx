@@ -1,21 +1,20 @@
 import React, { useMemo } from "react";
-import styled from 'styled-components';
-import MovingStar from './MovingStar'
+import styled from "styled-components";
+import MovingStar from "./MovingStar";
 
 const StarContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  
+
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   position: fixed;
   overflow: hidden;
 `;
 
 function AnimatedBackground() {
-
   const stars = useMemo(() => {
     const arr = [];
     for (let i = 0; i < 200; i++) {
@@ -31,17 +30,13 @@ function AnimatedBackground() {
           speed={speed}
           size={size}
           rightSpeed={rightSpeed}
-        />
+        />,
       );
     }
     return arr;
   }, []);
 
-  return (
-    <StarContainer>
-      {stars}
-    </StarContainer>
-  );
+  return <StarContainer>{stars}</StarContainer>;
 }
 
 export default AnimatedBackground;

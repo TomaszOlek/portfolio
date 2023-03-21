@@ -1,5 +1,5 @@
 import React from "react";
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 import Container from "./Container";
 
@@ -26,8 +26,8 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <>
-      <GlobalStyle/>
-      <Container/>
+      <GlobalStyle />
+      <Container />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import SpoonLeft from "../assets/SpoonLeft.png";
 import SpoonRight from "../assets/SpoonRight.png";
@@ -13,7 +13,7 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background: url(${BackgroundImage});
-  box-shadow: inset 0 0 0 1000px rgba(4, 4, 4,.5);
+  box-shadow: inset 0 0 0 1000px rgba(4, 4, 4, 0.5);
 
   display: flex;
   flex-direction: row;
@@ -33,32 +33,66 @@ const Content = styled.div`
 function About() {
   return (
     <Container id="about">
-      <div style={{position:"absolute"}}>
-        <img src={G} alt="Big-G" loading="lazy" style={{width: "391px", height: "415px"}}/>
+      <div style={{ position: "absolute" }}>
+        <img
+          src={G}
+          alt="Big-G"
+          loading="lazy"
+          style={{ width: "391px", height: "415px" }}
+        />
       </div>
 
       <Content className="gs_reveal gs_reveal_fromLeft">
         <Header1 align="right">About Us</Header1>
-        <img src={SpoonLeft} alt="SpoonLeft" loading="lazy" style={{marginLeft: "auto", width: "40px", height: "9px", marginBottom: "15px"}}/>
+        <img
+          src={SpoonLeft}
+          alt="SpoonLeft"
+          loading="lazy"
+          style={{
+            marginLeft: "auto",
+            width: "40px",
+            height: "9px",
+            marginBottom: "15px",
+          }}
+        />
         <Paragraf align="right">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis pharetra adipiscing ultrices vulputate posuere tristique. In sed odio nec aliquet eu proin mauris et.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis pharetra
+          adipiscing ultrices vulputate posuere tristique. In sed odio nec
+          aliquet eu proin mauris et.
         </Paragraf>
-        <Button style={{margin: "30px 0 0 auto"}}>Know More</Button>
+        <Button style={{ margin: "30px 0 0 auto" }}>Know More</Button>
       </Content>
 
-      <img src={Knife} alt="Knife" loading="lazy" style={{width: "84px", height: "703px", zIndex:"1"}} className="gs_reveal"/>
+      <img
+        src={Knife}
+        alt="Knife"
+        loading="lazy"
+        style={{ width: "84px", height: "703px", zIndex: "1" }}
+        className="gs_reveal"
+      />
 
       <Content className="gs_reveal gs_reveal_fromRight">
         <Header1>Our History</Header1>
-        <img src={SpoonRight} alt="SpoonRight" loading="lazy" style={{position: "relative", width: "40px", height: "9px", marginBottom: "15px"}}/>
+        <img
+          src={SpoonRight}
+          alt="SpoonRight"
+          loading="lazy"
+          style={{
+            position: "relative",
+            width: "40px",
+            height: "9px",
+            marginBottom: "15px",
+          }}
+        />
         <Paragraf>
-          Adipiscing tempus ullamcorper lobortis odio tellus arcu volutpat. Risus placerat morbi volutpat habitasse interdum mi aliquam In sed odio nec aliquet.
+          Adipiscing tempus ullamcorper lobortis odio tellus arcu volutpat.
+          Risus placerat morbi volutpat habitasse interdum mi aliquam In sed
+          odio nec aliquet.
         </Paragraf>
-        <Button style={{margin: "30px 0 0 0"}}>Know More</Button>
+        <Button style={{ margin: "30px 0 0 0" }}>Know More</Button>
       </Content>
-
     </Container>
   );
 }
-  
+
 export default About;

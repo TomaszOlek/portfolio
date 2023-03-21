@@ -1,5 +1,5 @@
-import React, { useEffect } from "react"
-import { createGlobalStyle } from 'styled-components';
+import React, { useEffect } from "react";
+import { createGlobalStyle } from "styled-components";
 
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
@@ -35,8 +35,8 @@ gsap.registerPlugin(ScrollTrigger);
 function animateFrom(elem, direction) {
   direction = direction || 1;
   var x = 0,
-      y = direction * 100
-  if(elem.classList.contains("gs_reveal_fromLeft")) {
+    y = direction * 100;
+  if (elem.classList.contains("gs_reveal_fromLeft")) {
     x = -100;
     y = 0;
   } else if (elem.classList.contains("gs_reveal_fromRight")) {
@@ -46,32 +46,37 @@ function animateFrom(elem, direction) {
 
   elem.style.transform = "translate(" + x + "px, " + y + "px)";
   elem.style.opacity = "0";
-  gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
-    duration: 1.25, 
-    x: 0,
-    y: 0, 
-    autoAlpha: 1, 
-    ease: "expo", 
-    overwrite: "auto"
-  });
+  gsap.fromTo(
+    elem,
+    { x: x, y: y, autoAlpha: 0 },
+    {
+      duration: 1.25,
+      x: 0,
+      y: 0,
+      autoAlpha: 1,
+      ease: "expo",
+      overwrite: "auto",
+    },
+  );
 }
 
 function hide(elem) {
-  gsap.set(elem, {autoAlpha: 0});
+  gsap.set(elem, { autoAlpha: 0 });
 }
 
 function App() {
-
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
-        hide(elem)
-        
+      gsap.utils.toArray(".gs_reveal").forEach(function (elem) {
+        hide(elem);
+
         ScrollTrigger.create({
           trigger: elem,
           once: true,
           // markers: true,
-          onEnter: function() { animateFrom(elem) }, 
+          onEnter: function () {
+            animateFrom(elem);
+          },
           // onEnterBack: function() {animateFrom(elem, -1)},
           // onLeave: function() {hide(elem)}
         });
@@ -83,16 +88,16 @@ function App() {
 
   return (
     <>
-      <GlobalStyle/>
-      <Hero/>
-      <AboutUs/>
-      <Product/>
-      <Benefit/>
-      <Gallery/>
-      <Testimonial/>
-      <CTA/>
-      <Blog/>
-      <Footer/>
+      <GlobalStyle />
+      <Hero />
+      <AboutUs />
+      <Product />
+      <Benefit />
+      <Gallery />
+      <Testimonial />
+      <CTA />
+      <Blog />
+      <Footer />
     </>
   );
 }

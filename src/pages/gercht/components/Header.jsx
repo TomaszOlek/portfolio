@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import Logo from "../assets/Logo.png";
 import Spacer from "../assets/Spacer.png";
@@ -7,11 +7,11 @@ import Spacer from "../assets/Spacer.png";
 const Container = styled.div`
   width: 100vw;
   height: 121px;
-  background-color: #0C0B08;
+  background-color: #0c0b08;
   border-bottom: 1px solid #2c291e;
 
   position: fixed;
-  top: ${props => props.scrollDirection === "down" ? "-121px" : "0px" };
+  top: ${props => (props.scrollDirection === "down" ? "-121px" : "0px")};
   transition: all 0.5s;
 
   display: flex;
@@ -36,17 +36,17 @@ const ActionMenu = styled.div`
 `;
 const Link = styled.a`
   cursor: pointer;
-  color: #FFFFFF;
+  color: #ffffff;
   border-bottom: 1px solid #000000;
 
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
 
-  text-decoration:none;
-  &:hover{
+  text-decoration: none;
+  &:hover {
     transform: scale(1.1);
 
-    border-bottom: 1px solid #FFFFFF;
+    border-bottom: 1px solid #ffffff;
   }
 `;
 
@@ -60,7 +60,10 @@ function useScrollDirection() {
     const updateScrollDirection = () => {
       const scrollY = window.pageYOffset;
       const direction = scrollY > lastScrollY ? "down" : "up";
-      if (direction !== scrollDirection && (scrollY - lastScrollY > delta || scrollY - lastScrollY < -delta)) {
+      if (
+        direction !== scrollDirection &&
+        (scrollY - lastScrollY > delta || scrollY - lastScrollY < -delta)
+      ) {
         setScrollDirection(direction);
       }
       lastScrollY = scrollY > 0 ? scrollY : 0;
@@ -68,19 +71,18 @@ function useScrollDirection() {
     window.addEventListener("scroll", updateScrollDirection);
     return () => {
       window.removeEventListener("scroll", updateScrollDirection);
-    }
+    };
   }, [scrollDirection]);
 
   return scrollDirection;
-};
+}
 
 function Header() {
-
   const scrollDirection = useScrollDirection();
 
   return (
     <Container scrollDirection={scrollDirection}>
-      <img src={Logo} alt="gericht logo" loading="lazy"/>
+      <img src={Logo} alt="gericht logo" loading="lazy" />
       <NavBar>
         <Link href="#home">Home</Link>
         <Link href="#about">About</Link>
@@ -90,11 +92,11 @@ function Header() {
       </NavBar>
       <ActionMenu>
         <Link>Log In / Registration</Link>
-        <img src={Spacer} alt="spacer" loading="lazy"/>
+        <img src={Spacer} alt="spacer" loading="lazy" />
         <Link>Book Table</Link>
       </ActionMenu>
     </Container>
   );
 }
-  
+
 export default Header;

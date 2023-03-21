@@ -1,5 +1,5 @@
-import React from "react"
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
   width: 100vw;
@@ -37,6 +37,5 @@ function Empty() {
     </Container>
   );
 }
-  
+
 export default Empty;
-  

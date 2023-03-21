@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import BackgroundImage from "../assets/BackgroundImage.png";
 import SpoonRight from "../assets/SpoonRight.png";
@@ -15,7 +15,7 @@ const Container = styled.div`
   width: 100vw;
   height: 520px;
   background: url(${BackgroundImage});
-  box-shadow: inset 0 0 0 1000px rgba(4, 4, 4,.5);
+  box-shadow: inset 0 0 0 1000px rgba(4, 4, 4, 0.5);
 
   display: flex;
   flex-direction: row;
@@ -56,30 +56,63 @@ function PhotoGallery() {
     <Container id="blog">
       <GalleryText className="gs_reveal gs_reveal_fromLeft">
         <Header2>Instagram</Header2>
-        <img src={SpoonRight} alt="SpoonRight" loading="lazy" style={{width:"40px"}} />
+        <img
+          src={SpoonRight}
+          alt="SpoonRight"
+          loading="lazy"
+          style={{ width: "40px" }}
+        />
         <Header1>Photo Gallery</Header1>
-        <Paragraf margin="15px 0 10px 0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mu.</Paragraf>
-        <Button style={{ margin:"20px 0 0 0"}}>View More</Button>
+        <Paragraf margin="15px 0 10px 0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
+          mattis ipsum turpis elit elit scelerisque egestas mu.
+        </Paragraf>
+        <Button style={{ margin: "20px 0 0 0" }}>View More</Button>
       </GalleryText>
       <Gallery>
         <GalleryItem>
-          <img src={Ramen} alt="Ramen" loading="lazy" style={{ width:"192px", alignSelf:"center"}}/>
+          <img
+            src={Ramen}
+            alt="Ramen"
+            loading="lazy"
+            style={{ width: "192px", alignSelf: "center" }}
+          />
         </GalleryItem>
         <GalleryItem>
-          <img src={Drinks} alt="Drinks" loading="lazy" style={{ width:"192px", alignSelf:"center"}}/>
+          <img
+            src={Drinks}
+            alt="Drinks"
+            loading="lazy"
+            style={{ width: "192px", alignSelf: "center" }}
+          />
         </GalleryItem>
         <GalleryItem>
-          <img src={Egg} alt="Egg" loading="lazy" style={{ width:"192px", alignSelf:"center"}}/>
+          <img
+            src={Egg}
+            alt="Egg"
+            loading="lazy"
+            style={{ width: "192px", alignSelf: "center" }}
+          />
         </GalleryItem>
         <GalleryItem>
-          <img src={Soup} alt="Soup" loading="lazy" style={{ width:"192px", alignSelf:"center"}}/>
+          <img
+            src={Soup}
+            alt="Soup"
+            loading="lazy"
+            style={{ width: "192px", alignSelf: "center" }}
+          />
         </GalleryItem>
         <GalleryItem>
-          <img src={BlackberryDrink} alt="BlackberryDrink" loading="lazy" style={{ width:"192px", alignSelf:"center"}}/>
+          <img
+            src={BlackberryDrink}
+            alt="BlackberryDrink"
+            loading="lazy"
+            style={{ width: "192px", alignSelf: "center" }}
+          />
         </GalleryItem>
       </Gallery>
     </Container>
   );
 }
-  
+
 export default PhotoGallery;

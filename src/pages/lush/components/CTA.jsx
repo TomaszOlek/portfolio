@@ -1,9 +1,8 @@
-import React from "react"
-import styled from 'styled-components';
-import { CustomText, Button } from "../functions"
+import React from "react";
+import styled from "styled-components";
+import { CustomText, Button } from "../functions";
 
-import Tree from "../assets/Tree.png"
-
+import Tree from "../assets/Tree.png";
 
 const Container = styled.div`
   width: 100vw;
@@ -20,15 +19,15 @@ const Container = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-`
+`;
 
 const Input = styled.input`
   width: 475px;
   height: 50px;
   margin-top: 50px;
 
-  border: 1px solid #FFFFFF;
-  color: #FFFFFF;
+  border: 1px solid #ffffff;
+  color: #ffffff;
 
   background: transparent;
   backdrop-filter: blur(2.5px);
@@ -36,14 +35,36 @@ const Input = styled.input`
   padding: 12px 25px;
   box-sizing: border-box;
   margin-bottom: 80px;
-`
+`;
 
 function CTA() {
   return (
     <Container>
-      <CustomText family="Lato" height="48px" size="32px" weght="700" align="left" style={{width: "570px"}} className="gs_reveal gs_reveal_fromLeft">Enter your email address for our mailing Promo or other interesting things</CustomText>
-      <Input placeholder="Enter your email" className="gs_reveal gs_reveal_fromRight"/>
-      <Button fill={true} width="145px" height="50px" style={{marginBottom:"30px"}} className="gs_reveal gs_reveal_fromRight">Submit</Button>
+      <CustomText
+        family="Lato"
+        height="48px"
+        size="32px"
+        weght="700"
+        align="left"
+        style={{ width: "570px" }}
+        className="gs_reveal gs_reveal_fromLeft"
+      >
+        Enter your email address for our mailing Promo or other interesting
+        things
+      </CustomText>
+      <Input
+        placeholder="Enter your email"
+        className="gs_reveal gs_reveal_fromRight"
+      />
+      <Button
+        fill={"true"}
+        width="145px"
+        height="50px"
+        style={{ marginBottom: "30px" }}
+        className="gs_reveal gs_reveal_fromRight"
+      >
+        Submit
+      </Button>
     </Container>
   );
 }

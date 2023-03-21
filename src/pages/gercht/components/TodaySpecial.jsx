@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import SpoonRight from "../assets/SpoonRight.png";
 import Cocktail from "../assets/Cocktail.png";
@@ -9,7 +9,7 @@ import { CustomText, Paragraf, Header1, Header2, Button } from "../functions";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #0C0B08;
+  background-color: #0c0b08;
 
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ const TextHeader = styled.div`
 
 function TodaySpecial() {
   const Items = {
-    wineBeers :[
+    wineBeers: [
       {
         name: "Chapel Hill Shiraz",
         price: "$56",
@@ -97,64 +97,110 @@ function TodaySpecial() {
         price: "$26",
         moreInfo: "Gin | Sweet Vermouth | Campari | Orange garnish",
       },
-    ]
+    ],
   };
 
   return (
     <Container id="specials">
       <TextHeader className="gs_reveal">
-        <Header2 style={{textTransform: "capitalize"}}>Menu that fits you palatte</Header2>
-        <img src={SpoonRight} alt="SpoonRight" loading="lazy"/>
+        <Header2 style={{ textTransform: "capitalize" }}>
+          Menu that fits you palatte
+        </Header2>
+        <img src={SpoonRight} alt="SpoonRight" loading="lazy" />
         <Header1>Today’s Special</Header1>
       </TextHeader>
 
-      <div style={{ display: "flex", flexDirection: "row", gap:"50px"}}>
+      <div style={{ display: "flex", flexDirection: "row", gap: "50px" }}>
         <Contnet className="gs_reveal gs_reveal_fromLeft">
-          <CustomText weight="600" size="45px">Wine & Beer</CustomText>
-          {
-            Items.wineBeers.map((item)=>(
-              <SpecialItem>
-              <div style={{ display:"flex", flexDirection:"row", alignItems: "center", justifyContent: "center", gap:"32px", width:"100%"}}>
-                <Header2 color="#DCCA87" margin="0" style={{marginRight:"auto"}}>{item.name}</Header2>
-                <hr style={{width:"119px", margin:"0"}}/>
-                <Header2 margin="0" style={{fontFeatureSettings: "'tnum' on, 'lnum' on"}}>{item.price}</Header2>
+          <CustomText weight="600" size="45px">
+            Wine & Beer
+          </CustomText>
+          {Items.wineBeers.map(item => (
+            <SpecialItem>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "32px",
+                  width: "100%",
+                }}
+              >
+                <Header2
+                  color="#DCCA87"
+                  margin="0"
+                  style={{ marginRight: "auto" }}
+                >
+                  {item.name}
+                </Header2>
+                <hr style={{ width: "119px", margin: "0" }} />
+                <Header2
+                  margin="0"
+                  style={{ fontFeatureSettings: "'tnum' on, 'lnum' on" }}
+                >
+                  {item.price}
+                </Header2>
               </div>
-              <Paragraf style={{marginRight:"auto"}}>{item.moreInfo}</Paragraf>
+              <Paragraf style={{ marginRight: "auto" }}>
+                {item.moreInfo}
+              </Paragraf>
             </SpecialItem>
-            ))
-          }
-
+          ))}
         </Contnet>
-        <div style={{ 
-          width:"385px", 
-          height: "616.75px",
-          backgroundImage:`url(${Cocktail})`, 
-          backgroundRepeat: "no-repeat", 
-          backgroundSize: "contain",
-          boxShadow: "5px 5px 10px 20px #0C0B08 inset"
-        }} className="gs_reveal"/>
+        <div
+          style={{
+            width: "385px",
+            height: "616.75px",
+            backgroundImage: `url(${Cocktail})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "contain",
+            boxShadow: "5px 5px 10px 20px #0C0B08 inset",
+          }}
+          className="gs_reveal"
+        />
         <Contnet className="gs_reveal gs_reveal_fromRight">
-          <CustomText weight="600" size="45px">Cocktails</CustomText>
-          {
-            Items.cocktails.map((item)=>(
-              <SpecialItem>
-              <div style={{ display:"flex", flexDirection:"row", alignItems: "center", justifyContent: "center", gap:"32px", width:"100%"}}>
-                <Header2 color="#DCCA87" margin="0" style={{marginRight:"auto"}}>{item.name}</Header2>
-                <hr style={{width:"119px", margin:"0"}}/>
-                <Header2 margin="0" style={{fontFeatureSettings: "'tnum' on, 'lnum' on"}}>{item.price}</Header2>
+          <CustomText weight="600" size="45px">
+            Cocktails
+          </CustomText>
+          {Items.cocktails.map(item => (
+            <SpecialItem>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "32px",
+                  width: "100%",
+                }}
+              >
+                <Header2
+                  color="#DCCA87"
+                  margin="0"
+                  style={{ marginRight: "auto" }}
+                >
+                  {item.name}
+                </Header2>
+                <hr style={{ width: "119px", margin: "0" }} />
+                <Header2
+                  margin="0"
+                  style={{ fontFeatureSettings: "'tnum' on, 'lnum' on" }}
+                >
+                  {item.price}
+                </Header2>
               </div>
-              <Paragraf style={{marginRight:"auto"}}>{item.moreInfo}</Paragraf>
+              <Paragraf style={{ marginRight: "auto" }}>
+                {item.moreInfo}
+              </Paragraf>
             </SpecialItem>
-            ))
-          }
-
+          ))}
         </Contnet>
       </div>
 
-      <Button style={{marginTop:"30px"}}>View More</Button>
-
+      <Button style={{ marginTop: "30px" }}>View More</Button>
     </Container>
   );
 }
-  
+
 export default TodaySpecial;
