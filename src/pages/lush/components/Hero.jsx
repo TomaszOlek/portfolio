@@ -57,7 +57,7 @@ function Hero() {
           margin="0 0 22px 0"
           size="60px"
           weight="700"
-          style={{ width: "1070px" }}
+          style={{ width: "1100px" }}
           className="gs_reveal"
         >
           Nature's Beauty Delivered to You
