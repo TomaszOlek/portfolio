@@ -4,7 +4,7 @@ import NotFoundPage from "../components/NotFoundPage";
 
 const Home = lazy(() => import("../Container"));
 const Lush = lazy(() => import("../pages/lush/App"));
-const Gercht = lazy(() => import("../pages/gercht/App"));
+const Gericht = lazy(() => import("../pages/gericht/App"));
 
 export default () => (
   <Routes>
@@ -28,7 +28,7 @@ export default () => (
       path="/gericht"
       element={
         <Suspense fallback={<div>Loading...</div>}>
-          <Gercht />
+          <Gericht />
         </Suspense>
       }
     />

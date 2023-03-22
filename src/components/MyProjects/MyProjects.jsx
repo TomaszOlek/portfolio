@@ -160,7 +160,7 @@ const options = [
     name: "Gericht and Lush Page",
     image: Gericht,
     liveView: [
-      "https://tomasz-olek.site/gercht",
+      "https://tomasz-olek.site/gericht",
       "https://tomasz-olek.site/lush",
     ],
     code: [
