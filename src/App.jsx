@@ -1,11 +1,12 @@
-import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import React from "react";
+import { createGlobalStyle } from "styled-components";
 
-import Routes from './routes/AppRouterDynamic'
+import Routes from "./routes/AppRouterDynamic";
 
 const GlobalStyle = createGlobalStyle`
   *{
     scroll-behavior: smooth;
+    color: white;
   }
 
   body {
@@ -25,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <>
-      <GlobalStyle/>
+      <GlobalStyle />
       <Routes />
     </>
   );

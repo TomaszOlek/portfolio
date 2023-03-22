@@ -11,11 +11,20 @@ import Netflix from "../../assets/Netflix_Project.png";
 import TalkItThrough from "../../assets/TalkItThrough_Project.png";
 import Reddit from "../../assets/Reddit_Project.png";
 
+import ReactImg from "../../assets/React.svg";
+import SassImg from "../../assets/Sass.svg";
+import JavascriptImg from "../../assets/Javascript.svg";
+import TypescriptImg from "../../assets/Typescript.svg";
+import StyledComponentsImg from "../../assets/StyledComponents.png";
+import NextJsImg from "../../assets/NextJs.svg";
+import ReactQueryImg from "../../assets/ReactQuery.svg";
+import PrismaImg from "../../assets/Prisma.svg";
+
 function MyProjects() {
   gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
   gsap.defaults({ ease: "none" });
 
-  const [proejctData, setProjectData] = useState({});
+  const [projectData, setProjectData] = useState({});
   const [isProjectDataVisible, setIsProjectDataVisible] = useState(false);
 
   useEffect(() => {
@@ -43,7 +52,6 @@ function MyProjects() {
             scrub: true,
             start: "top center",
             end: "110%",
-            // markers: true
           },
         })
         .to(".ball01", { duration: 0.02, scale: 1 })
@@ -68,6 +76,12 @@ function MyProjects() {
   const handelProjectClick = project => {
     setProjectData(project);
     setIsProjectDataVisible(true);
+  };
+
+  const handelWindowClose = event => {
+    if (event.target.id === "window") {
+      setIsProjectDataVisible(false);
+    }
   };
 
   return (
@@ -127,11 +141,11 @@ function MyProjects() {
       </Clip>
       <div
         style={{ position: "fixed", top: 0, left: 0, zIndex: 10 }}
-        onClick={() => setIsProjectDataVisible(false)}
+        onClick={event => handelWindowClose(event)}
       >
         {isProjectDataVisible && (
-          <ProjectInfo>
-            <ProjectDetails proejctData={proejctData} />
+          <ProjectInfo id="window">
+            <ProjectDetails projectData={projectData} />
           </ProjectInfo>
         )}
       </div>
@@ -145,51 +159,92 @@ const options = [
   {
     name: "Gericht and Lush Page",
     image: Gericht,
-    liveView: "http://127.0.0.1:5173/gercht",
-    code: "https://github.com/TomaszOlek/portfolio/tree/master/src/pages/gercht",
-    figma: [
-      "https://www.figma.com/file/67ZtAj8USVbe88mkUobEdV/Modern-UI%2FUX%3A-Gericht-(Copy)?node-id=0-1&t=MQq4Y5GYhgsd31oD-0",
-      "https://www.figma.com/file/t0IFgkLMoP8WclRrKhhshY/Lush-Garden---Florist-Landing-Page-Design?node-id=1-1210&t=lLzMeQfeu2vDSqhj-0",
+    liveView: [
+      "https://tomasz-olek.site/gercht",
+      "https://tomasz-olek.site/lush",
+    ],
+    code: [
+      "https://github.com/TomaszOlek/portfolio/tree/master/src/pages/gercht",
+      "https://github.com/TomaszOlek/portfolio/tree/master/src/pages/lush",
+    ],
+    design: [
+      "https://www.figma.com/file/67ZtAj8USVbe88mkUobEdV/Modern-UI%2FUX%3A-Gericht-(Copy)?node-id=0-1&t=GOUFPMYdCvCiYo1q-0",
+      "https://www.figma.com/file/t0IFgkLMoP8WclRrKhhshY/Lush-Garden---Florist-Landing-Page-Design?node-id=0-1&t=pfHzmcEENz1UW6wf-0",
     ],
     position: {
       top: "210px",
       left: "320px",
     },
+    stack: [ReactImg, StyledComponentsImg, JavascriptImg],
+    responsivnes: "low",
+    about: `These projects are simple web pages using React, Sass, and Javascript. 
+    Its purpose is to showcase my ability to work with simple designs. 
+    Please note that pages are not responsive as it was not part of the design provided.`,
   },
   {
     name: "Netflix - Main dashboard",
     image: Netflix,
-    liveView: "https://magical-chebakia-84e3fd.netlify.app/",
-    code: "https://github.com/TomaszOlek/netflix-main-dashbord",
-    figma: ["https://www.figma.com/file/BsK0T6RnoKInhQ6xiksKQm/Design"],
+    liveView: ["https://magical-chebakia-84e3fd.netlify.app/"],
+    code: ["https://github.com/TomaszOlek/netflix-main-dashbord"],
+    design: [
+      "https://www.figma.com/file/BsK0T6RnoKInhQ6xiksKQm/Design?node-id=1-2&t=MgGicCldjfKf4fms-0",
+    ],
     position: {
       top: "620px",
       left: "100px",
     },
+    stack: [ReactImg, SassImg, TypescriptImg],
+    responsivnes: "heigh",
+    about: `The project is a Netflix-inspired main dashboard that 
+    showcases my ability to work with responsive design. 
+    Built using React, Sass, and Typescript, the dashboard features 
+    a sleek and modern interface that allows users to easily navigate 
+    and access content. The design is fully responsive, ensuring that it 
+    looks great on all devices, from desktop to mobile`,
   },
   {
     name: "Talk It Through - Chat",
     image: TalkItThrough,
-    liveView: "https://fullstack-talkitthrough.vercel.app/",
-    code: "https://github.com/TomaszOlek/fullstack-talkitthrough",
-    figma: [""],
+    liveView: ["https://fullstack-talkitthrough.vercel.app/"],
+    code: ["https://github.com/TomaszOlek/fullstack-talkitthrough"],
+    design: [],
     position: {
       top: "1070px",
       left: "280px",
     },
+    stack: [
+      ReactImg,
+      SassImg,
+      TypescriptImg,
+      NextJsImg,
+      ReactQueryImg,
+      PrismaImg,
+    ],
+    responsivnes: "medium",
+    about: `Talk It Through is a chat application showcasing my ability 
+    to create REST APIs and simple full-stack apps. It's built using 
+    React, Typescript, and NextJs, and allows users to chat in real-time. 
+    The app is hosted on Railway, so availability may vary at the end of the month.`,
   },
   {
-    name: "Reddit Main Page",
+    name: "Reddit - Main Page",
     image: Reddit,
-    liveView: "https://clever-kataifi-93f81c.netlify.app/",
-    code: "https://github.com/TomaszOlek/reddit-main-page",
-    figma: [
-      "https://www.figma.com/file/CWjXH3THR1TrERzfUFhl7z/Design?node-id=0-1&t=CXjQybFt75q2n7Yl-0",
+    liveView: ["https://clever-kataifi-93f81c.netlify.app/"],
+    code: ["https://github.com/TomaszOlek/reddit-main-page"],
+    design: [
+      "https://www.figma.com/file/CWjXH3THR1TrERzfUFhl7z/Design?node-id=1-2&t=25DIHcwVLCRn5zKm-0",
     ],
     position: {
       top: "1550px",
       left: "110px",
     },
+    stack: [ReactImg, SassImg, TypescriptImg],
+    responsivnes: "heigh",
+    about: `The Reddit-inspired main page is a highly responsive and visually complex design, 
+    showcasing my proficiency in React, Sass, and Typescript. The sleek and modern interface 
+    allows users to browse and interact with content easily, while the fully responsive design 
+    ensures compatibility across all devices. The project demonstrates my ability to build visually 
+    appealing and functional interfaces.`,
   },
 ];
 
@@ -274,9 +329,14 @@ const ProjectInfo = styled.div`
   width: 100vw;
   height: 100vh;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   position: absolute;
   top: 0;
   left: 0;
 
+  /* backdrop-filter: blur(1px); */
   background-color: #00000074;
 `;
