@@ -19,6 +19,8 @@ import StyledComponentsImg from "../../assets/StyledComponents.png";
 import NextJsImg from "../../assets/NextJs.svg";
 import ReactQueryImg from "../../assets/ReactQuery.svg";
 import PrismaImg from "../../assets/Prisma.svg";
+import ReduxImg from "../../assets/Redux.svg";
+import PrettierImg from "../../assets/Prettier.svg";
 
 function MyProjects() {
   gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
@@ -193,7 +195,7 @@ const options = [
       top: "620px",
       left: "100px",
     },
-    stack: [ReactImg, SassImg, TypescriptImg],
+    stack: [ReactImg, SassImg, TypescriptImg, ReduxImg, PrettierImg],
     responsivnes: "heigh",
     about: `The project is a Netflix-inspired main dashboard that 
     showcases my ability to work with responsive design. 
