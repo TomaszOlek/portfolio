@@ -46,8 +46,9 @@ const ProfessionnText = styled.div`
 `;
 const Swing = styled.span`
   position: absolute;
+  color: inherit;
 
-  line-height: 65%;
+  line-height: 55%;
   transform: translateY(12.5px);
 `;
 
