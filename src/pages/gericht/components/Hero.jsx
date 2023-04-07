@@ -107,7 +107,6 @@ function Hero() {
           <img
             src={FishImage}
             alt="fish_image"
-            loading="lazy"
             style={{ position: "relative", zIndex: "1" }}
           />
           <div style={{ position: "absolute", width: "0" }}>

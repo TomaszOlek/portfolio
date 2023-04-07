@@ -22,7 +22,9 @@ function ProjectDetails({ projectData }) {
           </Logos>
         </div>
 
-        <About>{projectData.about}</About>
+        <About>
+          <span dangerouslySetInnerHTML={{ __html: projectData.about }} />
+        </About>
       </Content>
 
       <Links>
@@ -139,4 +141,8 @@ const About = styled.p`
   font-weight: 600;
   line-height: 22px;
   margin: 5px 0 0 0;
+
+  & > span {
+    white-space: pre-line;
+  }
 `;

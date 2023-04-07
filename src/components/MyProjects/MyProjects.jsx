@@ -181,7 +181,10 @@ const options = [
     responsivnes: "low",
     about: `These projects are simple web pages using React, Sass, and Javascript. 
     Its purpose is to showcase my ability to work with simple designs. 
-    Please note that pages are not responsive as it was not part of the design provided.`,
+    Please note that pages are not responsive as it was not part of the design provided.
+
+    Keep in mind that the server in located in North America so images my load slowly for you depending on your location.
+    `,
   },
   {
     name: "Netflix - Main dashboard",

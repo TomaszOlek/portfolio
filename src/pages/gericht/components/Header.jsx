@@ -82,7 +82,7 @@ function Header() {
 
   return (
     <Container scrollDirection={scrollDirection}>
-      <img src={Logo} alt="gericht logo" loading="lazy" />
+      <img src={Logo} alt="gericht logo" />
       <NavBar>
         <Link href="#home">Home</Link>
         <Link href="#about">About</Link>
