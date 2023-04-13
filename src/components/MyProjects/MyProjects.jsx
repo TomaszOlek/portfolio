@@ -6,14 +6,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
-import Gericht from "../../assets/Gericht_Project.png";
+import Connect from "../../assets/Connect.png";
 import Netflix from "../../assets/Netflix_Project.png";
 import TalkItThrough from "../../assets/TalkItThrough_Project.png";
 import Reddit from "../../assets/Reddit_Project.png";
 
 import ReactImg from "../../assets/React.svg";
 import SassImg from "../../assets/Sass.svg";
-import JavascriptImg from "../../assets/Javascript.svg";
 import TypescriptImg from "../../assets/Typescript.svg";
 import StyledComponentsImg from "../../assets/StyledComponents.png";
 import NextJsImg from "../../assets/NextJs.svg";
@@ -21,6 +20,8 @@ import ReactQueryImg from "../../assets/ReactQuery.svg";
 import PrismaImg from "../../assets/Prisma.svg";
 import ReduxImg from "../../assets/Redux.svg";
 import PrettierImg from "../../assets/Prettier.svg";
+import NodeImg from "../../assets/Node.svg";
+import SocketImg from "../../assets/Socket.svg";
 
 function MyProjects() {
   gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
@@ -159,34 +160,6 @@ export default MyProjects;
 
 const options = [
   {
-    name: "Gericht and Lush Page",
-    image: Gericht,
-    liveView: [
-      "https://tomasz-olek.site/gericht",
-      "https://tomasz-olek.site/lush",
-    ],
-    code: [
-      "https://github.com/TomaszOlek/portfolio/tree/master/src/pages/gercht",
-      "https://github.com/TomaszOlek/portfolio/tree/master/src/pages/lush",
-    ],
-    design: [
-      "https://www.figma.com/file/67ZtAj8USVbe88mkUobEdV/Modern-UI%2FUX%3A-Gericht-(Copy)?node-id=0-1&t=GOUFPMYdCvCiYo1q-0",
-      "https://www.figma.com/file/t0IFgkLMoP8WclRrKhhshY/Lush-Garden---Florist-Landing-Page-Design?node-id=0-1&t=pfHzmcEENz1UW6wf-0",
-    ],
-    position: {
-      top: "210px",
-      left: "320px",
-    },
-    stack: [ReactImg, StyledComponentsImg, JavascriptImg],
-    responsivnes: "low",
-    about: `These projects are simple web pages using React, Sass, and Javascript. 
-    Its purpose is to showcase my ability to work with simple designs. 
-    Please note that pages are not responsive as it was not part of the design provided.
-
-    Keep in mind that the server in located in North America so images my load slowly for you depending on your location.
-    `,
-  },
-  {
     name: "Netflix - Main dashboard",
     image: Netflix,
     liveView: ["https://magical-chebakia-84e3fd.netlify.app/"],
@@ -195,8 +168,8 @@ const options = [
       "https://www.figma.com/file/BsK0T6RnoKInhQ6xiksKQm/Design?node-id=1-2&t=MgGicCldjfKf4fms-0",
     ],
     position: {
-      top: "620px",
-      left: "100px",
+      top: "210px",
+      left: "320px",
     },
     stack: [ReactImg, SassImg, TypescriptImg, ReduxImg, PrettierImg],
     responsivnes: "heigh",
@@ -214,8 +187,8 @@ const options = [
     code: ["https://github.com/TomaszOlek/fullstack-talkitthrough"],
     design: [],
     position: {
-      top: "1070px",
-      left: "280px",
+      top: "620px",
+      left: "100px",
     },
     stack: [
       ReactImg,
@@ -240,8 +213,8 @@ const options = [
       "https://www.figma.com/file/CWjXH3THR1TrERzfUFhl7z/Design?node-id=1-2&t=25DIHcwVLCRn5zKm-0",
     ],
     position: {
-      top: "1550px",
-      left: "110px",
+      top: "1070px",
+      left: "280px",
     },
     stack: [ReactImg, SassImg, TypescriptImg],
     responsivnes: "heigh",
@@ -250,6 +223,26 @@ const options = [
     allows users to browse and interact with content easily, while the fully responsive design 
     ensures compatibility across all devices. The project demonstrates my ability to build visually 
     appealing and functional interfaces.`,
+  },
+  {
+    name: "Connect Four Online",
+    image: Connect,
+    liveView: ["http://connect-four.io/"],
+    code: [],
+    design: [],
+    position: {
+      top: "1550px",
+      left: "110px",
+    },
+    stack: [ReactImg, StyledComponentsImg, TypescriptImg, NodeImg, SocketImg],
+    responsivnes: "low",
+    about: `Please keep in mind that the project is still under Development.
+    
+    The Connect Four Online page is a project that enables players to enjoy 
+    the classic game of Connect Four with anyone worldwide. Featuring a user-friendly interface, 
+    multiple game modes, and various additional features, Connect Four Online provides an engaging 
+    and interactive way to play the game and connect with other players online. 
+    `,
   },
 ];
 

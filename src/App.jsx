@@ -1,7 +1,7 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 
-import Routes from "./routes/AppRouterDynamic";
+import Home from "./Container";
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Routes />
+      <Home />
     </>
   );
 }

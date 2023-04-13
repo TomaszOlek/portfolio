@@ -52,11 +52,15 @@ function ProjectDetails({ projectData }) {
         </div>
         <div>
           <p>Code:</p>
-          {projectData.code.map(link => (
-            <a href={link} target="_blank">
-              Code
-            </a>
-          ))}
+          {projectData.design.length > 0 ? (
+            projectData.code.map(link => (
+              <a href={link} target="_blank">
+                Code
+              </a>
+            ))
+          ) : (
+            <p>Code not avilable</p>
+          )}
         </div>
       </Links>
     </Container>
@@ -75,7 +79,7 @@ const filterColors = {
 
 const Container = styled.div`
   width: 750px;
-  height: 400px;
+  height: 420px;
 
   display: flex;
   flex-direction: column;
@@ -105,6 +109,7 @@ const Links = styled.div`
   align-items: center;
   width: 70%;
   gap: 20px;
+  margin-top: auto;
 
   & div {
     display: flex;
@@ -120,7 +125,8 @@ const Links = styled.div`
 const Logos = styled.div`
   display: flex;
   gap: 10px;
-  margin: 5px 10px;
+
+  margin: 15px 10px 5px 10px;
 
   & > img:nth-last-child(1) {
     margin-left: auto;
