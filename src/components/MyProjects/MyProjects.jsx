@@ -162,7 +162,7 @@ const options = [
   {
     name: "Netflix - Main dashboard",
     image: Netflix,
-    liveView: ["https://magical-chebakia-84e3fd.netlify.app/"],
+    liveView: ["https://netflix-main-dashboard.netlify.app/"],
     code: ["https://github.com/TomaszOlek/netflix-main-dashbord"],
     design: [
       "https://www.figma.com/file/BsK0T6RnoKInhQ6xiksKQm/Design?node-id=1-2&t=MgGicCldjfKf4fms-0",
@@ -207,7 +207,7 @@ const options = [
   {
     name: "Reddit - Main Page",
     image: Reddit,
-    liveView: ["https://clever-kataifi-93f81c.netlify.app/"],
+    liveView: ["https://redit-main-page.netlify.app/"],
     code: ["https://github.com/TomaszOlek/reddit-main-page"],
     design: [
       "https://www.figma.com/file/CWjXH3THR1TrERzfUFhl7z/Design?node-id=1-2&t=25DIHcwVLCRn5zKm-0",
@@ -228,7 +228,7 @@ const options = [
     name: "Connect Four Online",
     image: Connect,
     liveView: ["http://connect-four.io/"],
-    code: [],
+    code: ["https://github.com/TomaszOlek/Connect-four-online"],
     design: [],
     position: {
       top: "1550px",
